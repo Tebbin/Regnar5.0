@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="CSS/Style.css" type="text/css"> 
+	<title>Prototype</title>
+	<meta charset="utf-8">
+    <script src="Amcharts/amcharts/amcharts.js"></script>
+    <script src="Amcharts/amcharts/serial.js"></script>
+    <script src="JavaScript/DB.js"></script>
+    <script src="JavaScript/Dag.js"></script>
+	<script src="JavaScript/Namn.js"></script>
+</head>
+
+<body onload="NyttNamn(), CurrentDate()">    
+
+	<nav id="container">
+	<header>
+		<h1><span class="red-text">P</span>rototype</h1>
+		<h2><span class="red-text">S</span>CADA</h2>
+	</header>
+
+	<nav id=menu>
+		<ul>
+			<li class="topmenu"><a href="Hemsida.html">Home</a></li>
+			<li class="topmenu"><a href="generalInformation.html">General information</a></li>		
+			<li class="topmenu"><a href="browse.html">Browse pages</a></li>
+			<li class="topmenu"><a href="contact.html">Contact info</a></li>
+		</ul>	
+	</nav>
+			
+	<nav id="leftmenu">
+	<h3 id="ThisDate"></h3>
+      <li><a href="animations.html">Page 1</a></li>
+      <li><a href="todo-master/index.html">Todo-List</a></li>
+      <li><a href="JSON AJAX/index.html">Page 3</a></li>
+      <li><a href="Page4.html">Page 4</a></li>	
+	</nav>
+	
+<section>
+		
+		<h2 id="InfoHeader">Welcome to the home page</h2>
+		
+		<h3>What is this?</h3>
+		<br>
+		<p>This is the main page of the SCADA program. From here you can access all the other pages of the project.This is the main page of the SCADA program. From here you can access all the other pages of the project.</p>
+		<h3>What is it useful for?</h3>
+		<br>
+		<p>You can change the values of the different components in the program and optimize it. You can check the overall energy consumption of the building. You can change the values of the different components in the program and optimize it. You can check the overall energy consumption of the building.</p><br><br>
+		
+		<h4>Do you know what SCADA is?</h4><br>
+		
+	<script>
+		var svar = ["Yes","No","Maybe"];
+	</script>	
+		
+	
+		<button onclick="document.getElementById('demo').innerHTML = svar[0];">Yes</button>		
+		<button onclick="document.getElementById('demo').innerHTML = svar[1];">No</button>
+		<button onclick="document.getElementById('demo').innerHTML = svar[2];">Maybe</button>
+		<br><br>
+		<p id="demo"></p>
+		<br>
+		<h4>If yes. How familiar are you with the term on a scale from 1-10, where 10 is highly familiar.</h4><br>
+		<input id="id1" type="number" min="1" max="10" required>
+		<button onclick="myfunktion()">Ok</button>
+		<br><br>
+
+	<div class="buttons">
+		<button data-add="blue-rekt">change rekt</button>
+		<button data-pink="pink-rekt">pink rekt</button>
+	</div>
+	
+
+<svg id="rekt" class="rekt" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns="http://www.w3.org/2000/svg" height="1.8e2" viewBox="0 0 180.00001 179.99998" width="1.8e2" version="1.1" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/">
+ <metadata id="metadata4207">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <rect id="rekt-color" class="rekt-color" rx="0" ry="0" height="1.7e2" width="1.7e2" stroke="#000" stroke-linecap="round" y="10" x="2.7" stroke-width="5.3" class="nm-rekt-color" fill="#f00"/>
+</svg>
+
+</section>	
+
+<div id="chartdiv" style="width: 640px; height: 400px;"></div>
+<script>
+      AmCharts.makeChart ( "chartdiv", {
+        "type": "serial",
+        "dataProvider": chartData,
+        "categoryField": "country",
+        "angle": 30,
+        "depth3D": 15,
+        
+        "graphs": [{
+          "fillAlphas": 0.8,
+          "valueField": "visits",
+          "type": "line",
+          "balloonText": "[[category]]: <b>[[value]]</b>"
+        }],
+
+        "categoryAxis": {
+          "autoGridCount": false,
+          "gridCount": chartData.length,
+          "gridPosition": "start",
+          "labelRotation": 45
+        }
+      });
+  </script>
+  </script>
+	
+	  <script src="JavaScript/rekt.js"></script>
+	
+</body>
+</html> 
+
+
+
+
+
+
+
+
+
+
+
+

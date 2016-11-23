@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="UTF-8">
+    <script src="Amcharts/amcharts/amcharts.js"></script>
+    <script src="Amcharts/amcharts/serial.js"></script>
+    <script src="DB.js"></script>
+</head>
+
+  <body>
+
+  <div id="chartdiv" style="width: 640px; height: 400px;"></div>
+
+  <script>
+   
+
+        AmCharts.makeChart( "chartdiv", {
+          "type": "serial",
+          "dataProvider": chartData,
+          "categoryField": "country",
+          "theme": "black",
+            "graphs": [ {
+              "valueField": "visits",
+              "type": "column",
+              "fillAlphas": 0.5,
+              "balloonText": "[[category]]: [[value]]",
+            } ],
+
+        "categoryAxis": {
+          "autoGridCount": false,
+          "gridCount": chartData.length,
+          "gridPosition": "start",
+          "labelRotation": 30,
+        }
+      });
+
+  </script>
+
+  </body>
+</html>
